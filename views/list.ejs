@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>To Do List </title>
+</head>
+<body> -->
+    
+ <!-- templating Vs Layouts -->
+  <!-- now here i am layouts or partials what if i want the header and footer in few of the cases so we have created a seperate layouts for it and then through ejs we are importing where necessary.     -->
+     <%- include("header") -%>
+   
+    <div class="box" id="heading">
+   <h1> <%= listTitle %></h1>
+</div>
+
+<div class="box">
+   <!-- <ul> -->
+     <!-- <li>Buy Food</li>
+     <li>Cook Food</li>
+     <li>Eat Food</li> -->
+     <% for (var i = 0; i<newListItems.length; i++){ %>
+
+          <div class="item">
+               <input type="checkbox">
+               <p> <%= newListItems[i] %></p>
+          </div>
+          <!-- <li> <%= newListItems[i] %></li> -->
+     <% } %>
+     
+   <!-- </ul> -->
+
+   <form action="/" method="post" class="item">
+     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+     <button type="submit" name="list" value=<%= listTitle %>>+</button>
+   </form>
+</div>
+
+   <!-- <form action="/" method="post">
+     <input type="text" name="newItem">
+     <button type="submit" name="button">Add</button>
+   </form> -->
+<!-- </body>
+
+<footer>
+     Copyright 2023 LaibaSheikh Pakistan 
+</footer>
+</html> -->
+
+<%- include("footer") -%>
